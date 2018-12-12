@@ -37,6 +37,15 @@ function ObjectGen(GL,shader){
         object.positions[i+2]+=object.z_speed
       }
     }
+
+    function matScale(matArr,k)
+     {
+         for(var i=0; i <matArr.length;i++)
+         {
+           matArr[i] = matArr[i]*k;
+         }
+         return matArr;
+     }
     
     function randNumber(low,high){
       return (Math.random() * (high - low) + low)
@@ -216,6 +225,7 @@ function ObjectGen(GL,shader){
         -0.5, -1.0, -0.5,
         -0.5, -1.0, 0.0,  
     ]
+    SLetter.positions = matScale(SLetter.positions,0.5)
   
     SLetter.x =-0.375       
     SLetter.y = -0.125
